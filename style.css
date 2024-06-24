@@ -1,0 +1,120 @@
+:root {
+    --primary-color: #007BFF;
+    --primary-hover: #0056b3;
+    --selected-color: #FFD700;
+    --occupied-color: #d9534f;
+    --occupied-hover: #c9302c;
+    --free-color: #4CAF50;
+    --free-hover: #45a049;
+    --background-color: #f0f0f0;
+    --button-width: 120px;
+    --button-height: 60px;
+    --button-font-size: 1.2em;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    margin: 0;
+}
+
+header, main {
+    margin: 20px;
+}
+
+#zones {
+    margin: 20px 0;
+}
+
+.zone-button, button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: var(--button-font-size);
+    cursor: pointer;
+    border: none;
+    border-radius: 30px; /* Oval shape */
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    width: var(--button-width);
+    height: var(--button-height);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.zone-button:hover, button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.selected-zone {
+    background-color: var(--selected-color);
+    color: black;
+}
+
+#auditorium {
+    display: none;
+    grid-template-columns: repeat(10, 50px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.seat {
+    width: 50px;
+    height: 50px;
+    background-color: var(--free-color);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.seat:hover {
+    background-color: var(--free-hover);
+}
+
+.occupied {
+    background-color: var(--occupied-color);
+}
+
+.occupied:hover {
+    background-color: var(--occupied-hover);
+}
+
+#summary {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --button-width: 90px;
+        --button-height: 45px;
+        --button-font-size: 1em;
+    }
+
+    .seat {
+        width: 35px;
+        height: 35px;
+    }
+
+    #summary {
+        font-size: 0.9em;
+    }
+
+    main {
+        margin: 10px;
+    }
+
+    header, #zones {
+        margin: 10px 0;
+    }
+}
